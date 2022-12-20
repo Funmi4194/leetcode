@@ -17,6 +17,8 @@ func two_edits(queries []string, dictionary []string) []string {
 	/* str holds the list of words  equvalent to dictionary
 	with or without two edits*/
 
+
+	Loop1:
 	for _, query := range queries { // for every word in queries store it in query
 		for _, dict := range dictionary { //for every word in dictionary store it in dict
 			edit := 0 //edit is 0 at first instance
@@ -27,7 +29,7 @@ func two_edits(queries []string, dictionary []string) []string {
 			}
 			if edit <= 2{ // if edit is less than 2 (after one or two equal)
 				str = append(str, query) // add word to str using the keyword append
-				continue // continue the loop until the last element in queries
+				continue Loop1// continue the loop until the last element in queries
 			}
 		}
 	}
